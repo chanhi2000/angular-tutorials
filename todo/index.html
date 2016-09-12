@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+	<script src="script.js"></script>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body ng-app="todo" ng-controller="TodoCtrl">
+	
+	<h1>Todo</h1>
+	<ul class="list-unstyled">
+		<li ng-repeat="todo in todos">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<input type="checkbox" ng-model="todo.completed">
+				</span>
+				<input type="text" class="form-control" ng-model="todo.title">
+			</div><!-- input-group -->	
+			<date>{{ todo.createdAt }}</date>
+		</li>
+	</ul>
+
+</body>
+</html>
