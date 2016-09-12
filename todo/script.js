@@ -31,7 +31,22 @@
 			if (index > -1) {
 				$scope.todos.splice(index, 1)
 			}
+		}
 
+		$scope.add = function(newTodoTitle) {
+			// create new todo
+			var newTodo = 
+			{
+				title: newTodoTitle
+			,	completed: false
+			,	createdAt: Date.now()
+			};
+
+			// push into todos
+			$scope.todos.push(newTodo)
+
+			//  empty form
+			$scope.newTodoTitle = "";
 		}
 	}]);
 })();
