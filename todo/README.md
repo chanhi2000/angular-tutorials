@@ -1,8 +1,9 @@
 # AngularJS Tutorials
+Make To-Do Web-App with AngularJS
 
-## 1. Make To-Do Web-App with AngularJS
+## Chapter 2.
 
-### directive: `ng-app`
+### 1. directive: `ng-app`
 Designate the body tag as 'ng-app'
 ```html
 <body ng-app>
@@ -10,7 +11,7 @@ Designate the body tag as 'ng-app'
 </body>
 ```
 
-### directive: `ng-init`
+### 2. directive: `ng-init`
 Edit the body tag to add `name` variable
 ```html
 <body ng-app ng-init="name = 'Chris'">
@@ -18,8 +19,8 @@ Edit the body tag to add `name` variable
 </body>
 ```
 
-### directive: `ng-controller`
-#### 1.
+### 3. directive: `ng-controller`
+#### a.
 ```js
 (function () {
 	var app = angular.module('todo', []);
@@ -31,7 +32,7 @@ Edit the body tag to add `name` variable
 </body>
 ```
 
-#### 2.
+#### b.
 ```js
 (function () {
 	var app = angular.module('todo', []);
@@ -47,7 +48,7 @@ Edit the body tag to add `name` variable
 </body>
 ```
 
-#### 3.
+#### c.
 ```js
 (function () {
 	var app = angular.module('todo', []);
@@ -82,7 +83,7 @@ or
 </body>
 ```
 
-### directive: `ng-model`
+### 4. directive: `ng-model`
 ```html
 <body ng-app="todo" ng-controller="TodoCtrl">
 	<h1>Todo</h1>
@@ -94,79 +95,3 @@ or
 
 </body>
 ```
-
-### directive: `ng-repeat`
-```js
-(function () {
-	var app = angular.module('todo', []);
-
-	app.controller('TodoCtrl',['$scope', function($scope) {
-		$scope.todos = [
-		{
-			title: 'yoga fire'
-		,	completed: false
-		,	createdAt: Date.now()
-		},
-		{
-			title: 'angular tutorial'
-		,	completed: false
-		,	createdAt: Date.now()
-		},
-		{
-			title: 'exercise'
-		,	completed: false
-		,	createdAt: Date.now()
-		}
-		]
-	}]);
-})();
-```
-```html
-<body ng-app="todo" ng-controller="TodoCtrl">
-
-	<h1>Todo</h1>
-	<div ng-repeat="todo in todos">
-		<input type="text" ng-model="todo.title">
-		<input type="checkbox" ng-model="todo.completed">
-		<date>{{ todo.createdAt }}</date>
-		<br>
-	</div>
-
-</body>
-```
-or
-```html
-<body ng-app="todo" ng-controller="TodoCtrl">
-	
-	<h1>Todo</h1>
-	<ul>
-		<li ng-repeat="todo in todos">
-			<input type="text" ng-model="todo.title">
-			<input type="checkbox" ng-model="todo.completed">
-			<date>{{ todo.createdAt }}</date>
-		</li>
-	</ul>
-
-</body>
-```
-
-### Bootstrap Layout
-```html
-<body ng-app="todo" ng-controller="TodoCtrl">
-	
-	<h1>Todo</h1>
-	<ul class="list-unstyled">
-		<li ng-repeat="todo in todos">
-			<div class="input-group">
-				<span class="input-group-addon">
-					<input type="checkbox" ng-model="todo.completed">
-				</span>
-				<input type="text" class="form-control" ng-model="todo.title">
-			</div><!-- input-group -->	
-			<date>{{ todo.createdAt }}</date>
-		</li>
-	</ul>
-
-</body>
-```
-
